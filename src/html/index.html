@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diceluck</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div id="handInfoOverlay" style>
+
+    </div>
+    <div id="content">
+        <div id="contentHeader">
+            <div id="turn">ターン&nbsp;:&nbsp;
+                <div id="turnNow">2</div>/
+                <div id="turnMax">5</div>
+            </div>
+            <div id="objective">目標&nbsp;:&nbsp;
+                <div class="coin">2000</div>
+            </div>
+            <div id="heldCoin">所持コイン&nbsp;:&nbsp;
+                <div class="coin">200</div>
+            </div>
+        </div>
+        <div id="contentBody">
+            <!-- 役職一覧 -->
+            <div id="handPatterns">
+                <!-- 点数計算は、ダイスの出目をすべて足した値に、完成している役の点数を加算し、最終倍率をかけ合わせた物を1の位で切り下げて計算を行う。 -->
+                <!-- 出目の最大値は30+役職で120=150がデフォルトの最大値になる  -->
+                <div id="onepair" class="handPats" onmouseleave="handInfoLeft()"
+                    onmousemove="handInfoDisplay(event,this.id)">
+                    <div class="handName">ワンペア</div>
+                    <div class="handScore">5</div>
+                </div>
+                <div id="twopair" class="handPats" onmouseleave="handInfoLeft()"
+                    onmousemove="handInfoDisplay(event,this.id)">
+                    <div class="handName">ツーペア</div>
+                    <div class="handScore">12</div>
+                </div>
+                <div id="threedice" class="handPats" onmouseleave="handInfoLeft()"
+                    onmousemove="handInfoDisplay(event,this.id)">
+                    <div class="handName">スリーダイス</div>
+                    <div class="handScore">15</div>
+                </div>
+                <div id="fourdice" class="handPats" onmouseleave="handInfoLeft()"
+                    onmousemove="handInfoDisplay(event,this.id)">
+                    <div class="handName">フォーダイス</div>
+                    <div class="handScore">25</div>
+                </div>
+                <div id="fivedice" class="handPats" onmouseleave="handInfoLeft()"
+                    onmousemove="handInfoDisplay(event,this.id)">
+                    <div class="handName">ファイブダイス</div>
+                    <div class="handScore">50</div>
+                </div>
+                <div id="straight" class="handPats" onmouseleave="handInfoLeft()"
+                    onmousemove="handInfoDisplay(event,this.id)">
+                    <div class="handName">ストレート</div>
+                    <div class="handScore">35</div>
+                </div>
+                <div id="fullhouse" class="handPats" onmouseleave="handInfoLeft()"
+                    onmousemove="handInfoDisplay(event,this.id)">
+                    <div class="handName">フルハウス</div>
+                    <div class="handScore">30</div>
+                </div>
+                <div id="demon" class="handPats" onmouseleave="handInfoLeft()" onmousemove="
+                    handInfoDisplay(event,this.id)">
+                    <div class="handName">デーモン</div>
+                    <div class="handScore">66</div>
+                </div>
+            </div>
+            <!-- ショップを作成 -->
+            <div id="shop">
+                <div id="shopH">SHOP</div>
+                <div id="shopB">
+                    <div class="shopItem">
+                        <div class="itemName">もっと６</div>
+                        <div class="itemDesc">6が出る確率が上昇する</div>
+                    </div>
+                    <div class="shopItem">
+                        <div class="itemName">もっと６</div>
+                        <div class="itemDesc">6が出る確率が上昇する</div>
+                    </div>
+                    <div class="shopItem">
+                        <div class="itemName">もっと６</div>
+                        <div class="itemDesc">6が出る確率が上昇する</div>
+                    </div>
+                    <div class="shopItem">
+                        <div class="itemName">もっと６</div>
+                        <div class="itemDesc">6が出る確率が上昇する</div>
+                    </div>
+                </div>
+                <div id="shopR">
+                    <div id="shopRH">リロール</div>
+                    <div id="shopRCoin">
+                        <div class="coin">100</div>
+                    </div>
+                </div>
+            </div>
+            <!-- ダイスを振るステージを作成 -->
+            <div id="stage">
+                <div id="diceStageList"></div>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="../js/index.js"></script>
+</body>
+
+</html>

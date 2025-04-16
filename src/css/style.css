@@ -1,0 +1,238 @@
+:root {
+    --bg-color: #222;
+    --coin-color: #ffd900;
+    --text-white: #dedede;
+    --border-white: #afafaf;
+    --bg-stripe-1: #fff2;
+    --bg-stripe-2: #0003;
+    --hover-light: #fff2
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/* ゲームの大枠 */
+#content {
+    width: calc(1920px - 200px);
+    height: calc(1080px - 200px);
+    border: 2px var(--border-white) solid;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 0 20px black;
+}
+
+/* ヘッダーの設定 */
+#contentHeader {
+    height: 100px;
+    border-bottom: var(--border-white) 2px solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 30px;
+    align-items: center;
+}
+
+#contentHeader>div {
+    display: flex;
+}
+
+/* コインの表示 */
+.coin {
+    color: var(--coin-color)
+}
+
+.coin::before {
+    content: "●";
+}
+
+/* コンテンツの下側の設定 */
+#contentBody {
+    height: calc(1080px - 300px);
+    width: calc(1920px - 200px);
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* 役一覧の表示 */
+#handPatterns {
+    border: var(--border-white) 2px solid;
+    left: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.handPats {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 5px;
+}
+
+.handScore {
+    display: flex;
+    margin-left: auto;
+}
+
+.handScore::after {
+    content: "pt"
+}
+
+/* 役一覧を縞々にする */
+.handPats:nth-child(2n) {
+    background-color: var(--bg-stripe-1);
+}
+
+.handPats:nth-child(2n+1) {
+    background-color: var(--bg-stripe-2);
+}
+
+/* 手札のヘルプオーバレイに係る表示 */
+#handInfoOverlay {
+    position: fixed;
+    z-index: 1;
+}
+
+#handInfoOverlayHolder {
+    border: 2px solid var(--border-white);
+    box-shadow: 0 0 5px black;
+    width: 330px;
+    height: 140px;
+    border-radius: 10px;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#infoDiceHolder {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    height: 50px;
+    transition: .2s;
+}
+
+.dice {
+    height: 50px;
+    width: 50px;
+    border: solid 2px var(--border-white);
+    border-radius: 10px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+#infoDescription {
+    border-top: 2px solid var(--border-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+/* アイテムショップ */
+#shop {
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    width: 300px;
+    height: calc(1080px - 400px);
+    border: solid 2px var(--border-white);
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+#shopH {
+    width: 100%;
+    border-bottom: var(--border-white) 2px solid;
+    text-align: center;
+    height: 40px;
+
+    font-size: 30px;
+}
+
+#shopB {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto
+}
+
+.shopItem {
+    width: 100%;
+    border: solid 2px var(--border-white);
+    height: 100px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.shopItem:hover {
+    background-color: var(--hover-light);
+}
+
+.itemName {
+    font-size: 20px;
+    border-bottom: 1px solid var(--border-white);
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+}
+
+.itemDesc {
+    padding: 5px;
+    font-size: 12px;
+}
+
+#shopR {
+    width: 100%;
+    border-top: solid 2px white;
+    margin-top: auto;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#shopRH {
+    font-size: 20px;
+    line-height: 30px;
+    transition: .2s;
+}
+
+#shopRCoin {
+    font-size: 20px;
+}
+
+#shopR:hover>#shopRCoin {
+    text-shadow: 0 0 2px var(--coin-color);
+}
+
+#shopR:hover>#shopRH {
+    font-size: 30px;
+    transition: .2s
+}
+
+/* ダイスを振るステージ */
+#stage {
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    width: 680px;
+    height: calc(1080px - 400px);
+    border: solid 2px var(--border-white);
+    margin-right: 40px;
+}
