@@ -5,7 +5,7 @@
     --border-white: #afafaf;
     --bg-stripe-1: #fff2;
     --bg-stripe-2: #0003;
-    --hover-light: #fff2
+    --hover-light: #fff2;
 }
 
 body {
@@ -13,7 +13,11 @@ body {
     margin: 0;
     background-color: var(--bg-color);
     color: var(--text-white);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    user-select: none;
 }
 
 /* ゲームの大枠 */
@@ -223,16 +227,83 @@ body {
 }
 
 #shopR:hover>#shopRH {
-    font-size: 30px;
+    font-size: 25px;
     transition: .2s
+}
+
+
+/* 真ん中のコンテナ */
+#midContainer {
+    height: calc(1080px - 400px);
+    width: 700px;
 }
 
 /* ダイスを振るステージ */
 #stage {
     border-radius: 10px;
     box-shadow: 0 0 10px #000;
-    width: 680px;
-    height: calc(1080px - 400px);
+    height: 300px;
+    width: 100%;
     border: solid 2px var(--border-white);
-    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+#diceStageList {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.diceBig {
+    width: 100px;
+    height: 100px;
+    border: var(--border-white) 2px solid;
+    border-radius: 10px;
+}
+
+#diceRoll {
+    border-top: 2px solid var(--border-white);
+    height: 60px;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#diceRollH {
+    padding: 10px;
+    border: 2px solid var(--border-white);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#diceRollH:hover {
+    background: var(--hover-light);
+}
+
+#diceRollNum {
+    display: flex;
+}
+
+#diceLock {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: space-around;
+}
+
+.diceLocker:hover {
+    background-color: var(--hover-light);
+}
+
+.diceLocker {
+    border: 1px solid var(--border-white);
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 10px;
 }

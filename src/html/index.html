@@ -99,13 +99,36 @@
                     </div>
                 </div>
             </div>
-            <!-- ダイスを振るステージを作成 -->
-            <div id="stage">
-                <div id="diceStageList"></div>
+            <!-- 真ん中は二段 -->
+            <div id="midContainer">
+                <!-- ダイスを振るステージを作成 -->
+                <div id="stage">
+                    <div id="diceStageList">
+                        <div id="dice1" class="diceBig"></div>
+                        <div id="dice2" class="diceBig"></div>
+                        <div id="dice3" class="diceBig"></div>
+                        <div id="dice4" class="diceBig"></div>
+                        <div id="dice5" class="diceBig"></div>
+                    </div>
+                    <div id="diceLock">
+                        <div id="diceLock1" class="diceLocker noLock" onclick="lockDice(this.id)">ロック</div>
+                        <div id="diceLock2" class="diceLocker noLock" onclick="lockDice(this.id)">ロック</div>
+                        <div id="diceLock3" class="diceLocker noLock" onclick="lockDice(this.id)">ロック</div>
+                        <div id="diceLock4" class="diceLocker noLock" onclick="lockDice(this.id)">ロック</div>
+                        <div id="diceLock5" class="diceLocker noLock" onclick="lockDice(this.id)">ロック</div>
+                    </div>
+                    <div id="diceRoll">
+                        <div id="diceRollH">ロール</div>
+                        <div id="diceRollNum">
+                            残り
+                            <div id="diceRollLeft">1</div>/
+                            <div id="diceRollMax">3</div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
-
-
     </div>
     <script src="../js/index.js"></script>
 </body>
